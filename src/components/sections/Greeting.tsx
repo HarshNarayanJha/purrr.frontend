@@ -10,8 +10,8 @@ export default function Greeting({ onSubmit }: GreetingProps) {
     const name = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
-      if (typeof window != 'undefined' && window.localStorage) {
-        const username = localStorage.getItem('username');
+      if (typeof window != 'undefined' && window.sessionStorage) {
+        const username = sessionStorage.getItem('username');
         if (username) {
           onSubmit(username);
         }

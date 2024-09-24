@@ -66,8 +66,8 @@ export const useChatSocket = () => {
     const setUserName = useCallback((name: string) => {
         socket?.emit(ClientEvents.INIT_USER, { name });
         setUser(name);
-        if (typeof window != 'undefined' && window.localStorage) {
-          localStorage.setItem("username", name);
+        if (typeof window != 'undefined' && window.sessionStorage) {
+          sessionStorage.setItem("username", name);
         }
     }, [socket]);
 
